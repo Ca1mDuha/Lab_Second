@@ -8,7 +8,7 @@
 #include <sstream>
 using namespace std;
 
-int Leap_Year(int year) {
+int Check_Leap_Year(int year) {
     return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
@@ -23,7 +23,7 @@ bool checkDate(string date) {
         while (getline(ss, part, '.'))
             parts.push_back(part);
 
-        if (parts[1] == "02" && Leap_Year(stoi(parts[2])))
+        if (parts[1] == "02" && Check_Leap_Year(stoi(parts[2])))
             if (stoi(parts[0]) > 29)
                 return false;
 
